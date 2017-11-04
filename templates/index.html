@@ -1,0 +1,51 @@
+<html>
+<head>
+<meta charset="utf-8">
+<script language="JavaScript" type="text/javascript" src="/../static/js/jquery.min.js"></script>
+
+<title>Kalpana</title>
+<meta name="auh" content="Nehsus" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="/../static/css/bootstrap.min.css" />
+<link rel="stylesheet" href="/../static/css/animate.min.css" />
+<link rel="stylesheet" href="/../static/css/ionicons.min.css" />
+<link rel="stylesheet" href="/../static/css/styles.css" />
+</head>
+<body>
+<section>
+    <center>
+        <table id="data" style= "border:2px solid rgba(158, 158, 158, 0.84)" class = "table-condensed"> <tr><td> Nothing's here :(</td></tr> </table>
+        <br>
+        <br>
+        <button id= "data2" class = "btn btn-secondary btn-x1" type= "button">Request</button>
+    </center>
+<h1>This is a heading apparently</h1>
+
+<div>
+    <form id="upload-file" role="form" action="upload" method="post" enctype="multipart/form-data">
+        <input type = "file" name = "file"/>
+        <input id= "upload-file" type = "submit" class = "btn btn-default btn-xl page-scroll" value= "Upload CSV" />
+    </form>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+        $(function(){
+          $('#upload-file').on('submit'), function(){
+          var form_data = new FormData($('#upload-file')[0]);
+          $.ajax({
+                 type: 'POST',
+                 url: '/upload',
+                 data: form_data,
+                 success:function(data){
+                 console.log("BT");
+                 }
+                 });
+        });
+        });
+        </script>
+
+    <script src="/../static/js/bootstrap.min.js"></script>
+    <script src="/../static/js/jquery.easing.min.js"></script>
+    <script src="/../static/js/wow.js"></script>
+</div>
+</section>
+</body>
+</html>
